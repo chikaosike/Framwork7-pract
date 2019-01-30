@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: auto;
+}
+
+h3 {
+    margin: auto;
+    padding-left: 300px;
+}
