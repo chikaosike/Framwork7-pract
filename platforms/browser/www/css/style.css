@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: auto;
+    
+}
+
+h3 {
+    color: red;
+    margin: auto;
+    padding-left: 300px;
+}
+
+.grid-parent {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+}
+
+.item1, .item5 {
+    width: 55%;  
+}
+
+.item2, .item3 {
+    width: 70%;
+}
+
+img, .item4 {
+    width: 100%;
+}
+
+.page-content {
+    font-size: 50px;
+    font-style: italic;
+    color: burlywood;
+    text-shadow: 2px 2px 5px #000;
+    
+}
+.card demo-card-header-pic .card-header {
+  height: 40vw;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+.card demo-card-header-pic .card-content-padding .date{
+  color: #8e8e93;
+}
+
+.card-header {
+    background-image:url(blair.jpg);
+    width: 100%;
+}
