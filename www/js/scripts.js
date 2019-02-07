@@ -11,10 +11,12 @@ var app = new Framework7({
             url: 'pages/page2.html',
         },
         {
-            path: '/page3/',
-            url: 'pages/page3.html',
-        }
+            path: '/page2/',
+            url: 'pages/NASA.html',
+        },
     ]
 });
 
 var mainView = app.views.create('.view-main');
+
+console.log("hello");

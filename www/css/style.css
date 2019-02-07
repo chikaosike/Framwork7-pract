@@ -4,38 +4,35 @@
 
 }
 
-h3 {
-    color: red;
-    margin: auto;
-    padding-left: 300px;
-}
-
 .grid-parent {
     display: grid;
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10%;
+    grid-row-gap: 2%;
 }
 
-.item1,
-.item5 {
-    width: 55%;
+.grid-parent1 {
+    display: grid;
+    padding-top: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20%;
+    grid-row-gap: 2%;
 }
 
-.item2,
-.item3 {
-    width: 70%;
-}
-
-img,
-.item4 {
-    width: 100%;
+.item5, .item8 {
+    background-position: center;
+    grid-column: span 2;
 }
 
 h1 {
-    font-size: 50px;
-    font-style: italic;
-    color: burlywood;
+    font-size: 3em;
+    text-align: center;
+    color: skyblue;
     text-shadow: 2px 2px 5px #000;
+}
 
+h2 {
+    text-align: center;
 }
 
 .card demo-card-header-pic .card-header {
@@ -49,7 +46,34 @@ h1 {
     color: #8e8e93;
 }
 
-.card-header {
-    background-image: url(blair.jpg);
+.navbar {
+    color: antiquewhite;
+}
+
+.left {
+    text-align: left;
+}
+
+.item1,
+.item4 {
+    grid-column: span 2;
+}
+
+.item2,
+.item3 {
+    grid-column: span 1;
+}
+
+img {
     width: 100%;
+}
+
+
+.navbar-inner,
+.toolbar-inner {
+    background: #000;
+}
+
+.item3 {
+    font-style: italic;
 }
