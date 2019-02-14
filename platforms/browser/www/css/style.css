@@ -11,12 +11,28 @@
     grid-row-gap: 2%;
 }
 
+.grid-parent1 {
+    display: grid;
+    padding-top: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20%;
+    grid-row-gap: 2%;
+}
+
+.item5, .item8 {
+    background-position: center;
+    grid-column: span 2;
+}
+
 h1 {
     font-size: 3em;
     text-align: center;
-    color: burlywood;
+    color: skyblue;
     text-shadow: 2px 2px 5px #000;
+}
 
+h2 {
+    text-align: center;
 }
 
 .card demo-card-header-pic .card-header {
@@ -38,14 +54,26 @@ h1 {
     text-align: left;
 }
 
-.item1, .item4 {
-    grid-column:span 2;
+.item1,
+.item4 {
+    grid-column: span 2;
 }
 
-.item2, .item3 {
+.item2,
+.item3 {
     grid-column: span 1;
 }
 
 img {
     width: 100%;
+}
+
+
+.navbar-inner,
+.toolbar-inner {
+    background: #000;
+}
+
+.item3 {
+    font-style: italic;
 }

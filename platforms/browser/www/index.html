@@ -1,59 +1,68 @@
 <!DOCTYPE html>
 <html>
-    <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/framework7.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>NASA: Photo of the Day</title>
+    <title>doubleDared</title>
 </head>
 
 <body>
     <div id="app">
         <div class="panel panel-left panel-cover">
-            <div class="list links-list">
-                <ul>
-                    <li><a href="https://en.wikipedia.org/wiki/Earth">Earth</a></li>
-                    <li><a href="#">Mars</a></li>
-                    <li><a href="#">Jupiter</a></li>
-                    <li><a href="#">Saturn</a></li>
-                </ul>
-            </div>
+            <div class="list">
+  <ul>
+    <!-- Smart select item -->
+    <li>
+  <a class="item-link smart-select smart-select-init">
+    <select name="fruits">
+      <option value="apple" selected>Apple</option>
+      <option value="pineapple">Pineapple</option>
+      <option value="pear">Pear</option>
+      <option value="orange">Orange</option>
+      <option value="melon">Melon</option>
+      <option value="peach">Peach</option>
+      <option value="banana">Banana</option>
+    </select>
+    <div class="item-content">
+      <div class="item-inner">
+        <div class="item-title">Fruit</div>
+      </div>
+    </div>
+  </a>
+</li>
+    <!-- Another smart selects or list view elements -->
+    ...
+  </ul>
+</div>
         </div>
         <div class="view view-main">
             <div class="page" data-name="home">
                 <div class="navbar">
                     <div class="navbar-inner">
-                        <div class=“left”><a href="#" class="panel-open">Planets</a></div>
-                        <div class="title">NASA</div>
+                        <div class=“left”><a href="#" class="panel-open">s</a></div>
+                        <div class="title">doubleDared</div>
                         <div class="right"><a href="#" data-panel="right" class="panel-open"></a></div>
                     </div>
                 </div>
 
                 <div class="toolbar toolbar-bottom-md">
                     <div class="toolbar-inner">
-                        <a href="/page2/" class="link">Yesterday's Photo</a>
+                        <a href="/page2/" class="link">Dares</a>
+                        <a href="/page3/" class="link">Progress</a>
                     </div>
                 </div>
                 <div class="page-content">
-                    <h1>Photo of the Day</h1>
-
-                      <div class="grid-parent">
-                 <div class="item1"><img id="td-image"></div>
-                <div class="item2 "><span id="td-title"></span></div>
-                <div class="item3">Copyright: <span id="td-copyright"></span></div>
-                <div class="item4"><span id="td-explanation"></span></div>
-            </div>
+                   
                 </div>
             </div>
         </div>
     </div>
-    <script src="js/apodapp.js"></script>
-<!--    <script src="js/apodapp-altpage.js"></script>-->
-    <script type="text/javascript" src="cordova.js">
-    </script>
+    <script type="text/javascript" src="cordova.js"></script>
     <script src="js/framework7.min.js"></script>
-    
     <script src="js/scripts.js"></script>
 </body>
+
 </html>

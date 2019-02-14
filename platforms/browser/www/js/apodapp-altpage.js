@@ -12,50 +12,62 @@ yesterday = apodURL + "&date=" + yesterday;
 
 
 // Option 2. Using live 'page:init' event handlers for each page
-$$(document).on('page:init', '.page[data-name="' + pagename + '"]', function (e) {
-	request(apodURL, getApod1);
+$$(document).on('page:init', '.page[data-name="page2"]', function (e) {
+    request(apodURL, getApod1);
 })
 
 function request(url, response) {
-	xmlhttp = new XMLHttpRequest();
-	xmlhttp.open('GET', url, true);
-	xmlhttp.send();
-	xmlhttp.onreadystatechange = response;
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open('GET', url, true);
+    xmlhttp.send();
+    xmlhttp.onreadystatechange = response;
 }
 
 function getApod1() { // when readystate changes
 
-	//check to see if the client -4 and server -200 is ready
-	if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+    //check to see if the client -4 and server -200 is ready
+    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 
-		populate(JSON.parse(xmlhttp.responseText), "td");
-		console.log("all info received from server");
+        populate(JSON.parse(xmlhttp.responseText), "td");
+        console.log("all info received from server");
 
-		//make 2nd request
-		request(yesterday, getApod2);
+        //make 2nd request
+        request(yesterday, getApod2);
 
-	} else {
-		console.log("no dice");
-	}
+    } else {
+        console.log("no dice");
+    }
 }
 
 function getApod2() { // when readystate changes
 
-	//check to see if the client -4 and server -200 is ready
-	if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+    //check to see if the client -4 and server -200 is ready
+    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 
-		populate(JSON.parse(xmlhttp.responseText), "yd");
-		console.log("all info received from server");
+        populate(JSON.parse(xmlhttp.responseText), "yd");
+        console.log("all info received from server");
 
-	} else {
-		console.log("no dice");
-	}
+    } else {
+        console.log("no dice");
+    }
 }
 
 
 function populate(data, date) {
-	document.getElementById(date + "-image").src = data.url;
-	document.getElementById(date + "-title").innerHTML = data.title;
-	document.getElementById(date + "-copyright").innerHTML = data.copyright;
-	document.getElementById(date + "-explanation").innerHTML = data.explanation;
+    var el;
+    switch (data.media_type) {
+        case "video":
+            el = document.createElement("iframe");
+            el.setAttribute('frameborder', '0');
+            break;
+        default:
+            el = document.createElement("img");
+            break;
+    }
+    el.id = date + "-image";
+//    document.getElementById(date + "-container").appendChild(el);
+    document.getElementById(date + "-image").src = data.url;
+    document.getElementById(date + "-title").innerHTML = data.title;
+    document.getElementById(date + "-copyright").innerHTML = data.copyright;
+    document.getElementById(date + "-explanation").innerHTML = data.explanation;
 }

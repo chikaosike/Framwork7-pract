@@ -4,70 +4,141 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="lib/jQuery/jquery.ui.min.css" />
+    <link rel="stylesheet" href="assets/todo.css" />
     <link rel="stylesheet" type="text/css" href="css/framework7.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>NASA: Photo of the Day</title>
+    <title>doubleDared</title>
 </head>
 
-<body>
+<body class="well">
     <div id="app">
         <div class="panel panel-left panel-cover">
-            <div class="list links-list">
-                <ul>
-                    <li><a href="https://en.wikipedia.org/wiki/Earth">Earth</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Mars">Mars</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Jupiter">Jupiter</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/Saturn">Saturn</a></li>
-                </ul>
-            </div>
+            <div class="list">
+  <ul>
+    <li>
+  <a class="item-link smart-select smart-select-init">
+    <select name="screen">
+      <option value="mode-day" selected>Day mode</option>
+      <option value="mode-night">Night mode</option>
+    </select>
+    <div class="item-content">
+      <div class="item-inner">
+        <div class="item-title">Screen Mode</div>
+      </div>
+    </div>
+  </a>
+      </li>
+       <li>
+  <a class="item-link smart-select smart-select-init">
+    <select name="alarm">
+      <option value="mode-day" selected>On</option>
+      <option value="mode-night">Off</option>
+    </select>
+    <div class="item-content">
+      <div class="item-inner">
+        <div class="item-title">Alarm</div>
+      </div>
+    </div>
+  </a>
+      </li>
+       <li>
+  <a class="item-link smart-select smart-select-init">
+    <select name="sound">
+      <option value="mode-day" selected>Vibrate</option>
+      <option value="mode-night">Silent</option>
+    </select>
+    <div class="item-content">
+      <div class="item-inner">
+        <div class="item-title">Sound</div>
+      </div>
+    </div>
+  </a>
+      </li>
+  </ul>
+</div>
         </div>
         <div class="view view-main">
             <div class="page" data-name="home">
                 <div class="navbar">
                     <div class="navbar-inner">
-                        <div class=“left”><a href="#" class="panel-open">Planets</a></div>
-                        <div class="title">NASA</div>
+                        <div class=“left”><a href="#" class="panel-open">Settings</a></div>
+                        <div class="title">doubleDared</div>
                         <div class="right"><a href="#" data-panel="right" class="panel-open"></a></div>
                     </div>
                 </div>
 
                 <div class="toolbar toolbar-bottom-md">
                     <div class="toolbar-inner">
-                        <a href="/page2/" class="link">More about NASA</a>
+<!--                        <a href="/page2/" class="link">Dares</a>-->
+                        <a href="/page3/" class="link">Progress</a>
                     </div>
                 </div>
                 <div class="page-content">
-                    <h1><i>Photo of the Day</i></h1>
+                   <div id="container">
+        <div class="task-list">
+            <h3>Add a dare</h3>
+            <form id="todo-form">
+                <input type="text" placeholder="Title" />
+                <textarea placeholder="Description"></textarea>
+                <input type="text" id="datepicker" placeholder="Due Date (dd/mm/yyyy)" />
+                <input type="button" class="btn btn-primary" value="Add Task" onclick="todo.add();" />
+            </form>
 
-                    <div class="grid-parent">
-                        <div class="item1"><img id="td-image"></div>
-                        <div class="item2 "><span id="td-title"></span></div>
-                        <b>
-                            <div class="item3">Copyright: <span id="td-copyright"></span></div>
-                        </b>
-                        <div class="item4"><span id="td-explanation"></span></div>
-                    </div>
-                    <br>
-                    
-                    <h1><i>Yesterday's Photo</i></h1>
+            <input type="button" class="btn btn-primary" value="Clear Data" onclick="todo.clear();" />
 
-                    <div class="grid-parent1">
-                        <div class="item1"><img id="yd-image"></div>
-                        <div class="item2 "><span id="yd-title"></span></div>
-                        <b>
-                            <div class="item3">Copyright: <span id="yd-copyright"></span></div>
-                        </b>
-                        <div class="item4"><span id="yd-explanation"></span></div>
-                    </div>
-                </div>
+            <div id="delete-div">
+                Drag Here to Delete
             </div>
         </div>
-    </div>
-    <script src="js/apodapp.js"></script>
-<!--        <script src="js/apodapp-altpage.js"></script>-->
-    <script type="text/javascript" src="cordova.js"></script>
+
+        <div class="task-list task-container" id="pending">
+            <h3>Pending Dares</h3>
+        </div>
+
+<!--
+        <div class="task-list task-container" id="inProgress">
+            <h3>Progress</h3>
+        </div>
+-->
+
+        <div class="task-list task-container" id="completed">
+            <h3>Dares Done</h3>
+        </div>
+
+
+
+        <div style="clear:both;"></div>
+        </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    
     <script src="js/framework7.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="lib/jQuery/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/Bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="lib/jQuery/jquery.ui.min.js"></script>
+        <script type="text/javascript" src="assets/todo.js"></script>
+
+        <script type="text/javascript">
+            $("#datepicker").datepicker();
+            $("#datepicker").datepicker("option", "dateFormat", "dd/mm/yy");
+
+            $(".task-container").droppable();
+            $(".todo-task").draggable({
+                revert: "valid",
+                revertDuration: 200
+            });
+            todo.init();
+
+        </script>
 </body>
 
 </html>
